@@ -1,8 +1,3 @@
-function goToRoom(room_type, ...)
-    if current_room and current_room.destroy then current_room:destroy() end
-    current_room = _G[room_type](...)
-end
-
 function initialiseFiles()
     local class_list = {}
     recursiveEnumerate("classes", class_list)
