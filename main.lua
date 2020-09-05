@@ -2,19 +2,21 @@ function love.load()
     Object = require "libs.classic"
     Collider = require "libs.HC"
     Input = require "libs.input"
+    M = require "libs.moses"
     require "utils"
     initialiseFiles()
-    player = Player()
+    current_room = nil
+    goToRoom("Stage")
     debug = false
     
 end
 
 function love.update(dt)
-    player:update(dt)
+    if current_room then current_room:update(dt) end
 end
 
 function love.draw()
-    player:draw()
+    if current_room then current_room:draw() end
 end
 
 function love.keypressed(key)
@@ -28,6 +30,6 @@ end
 
 function love.mousepressed(x, y, button, isTouch)
     if button == 1 then
-        player.weapon:shoot(x, y)
+        current_room.player.weapon:shoot(x, y)
     end
 end
