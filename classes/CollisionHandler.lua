@@ -3,7 +3,6 @@ CollisionHandler = Object:extend()
 function CollisionHandler:new(object, om)
     -- object to handle collisions of
     self.object = object
-    print(self.object)
     self.om = om
 end
 

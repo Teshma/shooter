@@ -28,13 +28,14 @@ function Enemy:draw()
         love.graphics.setColor(1, 0, 0)
         love.graphics.line(self.x + self.w/2, self.y + self.h/2, self.x + self.w/2 + self.v*math.cos(self.angle), self.y + self.h/2 + self.v*math.sin(self.angle))
         self.collider:draw("line")
+        if self.patrol_points then
+            for i,v in ipairs(self.patrol_points) do
+                love.graphics.circle("fill", v[1], v[2], 5)
+            end
+        end
+        if self.patrol_points and self.state.patrolling_state.moving then love.graphics.print(self.state.patrolling_state.next_point[1] .. " " .. self.state.patrolling_state.next_point[2], self.x, self.y - 40) end
         love.graphics.setColor(1, 1, 1)
     end
-end
-
-function Enemy:move(x, y, dt)
-    self.angle = math.atan2(self.y - y, self.x - x) -- calculate angle to x and y point
-    self.collider:move(-self.v*math.cos(self.angle)*dt, -self.v*math.sin(self.angle)*dt) -- increase x and y value towards x and y point along the angle
 end
 
 function Enemy:rotate(angle)
@@ -56,6 +57,11 @@ function Enemy:resolveCollision(object, dx, dy)
     if object:is(Enemy) then
         object.collider:move(dx,dy)
     end
+end
+
+function Enemy:setPatrolPoints(patrol_points)
+    self.patrol_points = patrol_points
+    self.state:refresh(self)
 end
 
 function Enemy:__tostring()

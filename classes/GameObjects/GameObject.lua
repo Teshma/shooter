@@ -9,8 +9,8 @@ function GameObject:new(om, x, y, args)
     self.alive = true
     self.collision_radius = 5
     self.collision_handler = CollisionHandler(self, om)
-    if args and #args >= 1 then
-        for k,v in ipairs(args) do
+    if args then
+        for k,v in pairs(args) do
             self[k] = v
         end
     end

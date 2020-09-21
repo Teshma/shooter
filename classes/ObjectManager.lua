@@ -31,9 +31,13 @@ function ObjectManager:draw()
 end
 
 function ObjectManager:addGameObject(object_name, x, y, args)
-    local extra_args = args or {}
+    if args then
+        for k,v in pairs(args) do
+            print(k, v)
+        end
+    end
     if _G[object_name] then
-        local game_object = _G[object_name](self, x or 0, y or 0, extra_args)
+        local game_object = _G[object_name](self, x or 0, y or 0, args or {})
         table.insert(self.objects, game_object)
         return game_object
     end

@@ -3,7 +3,7 @@ Stage = Object:extend()
 function Stage:new()
     self.ObjectManager = ObjectManager(self)
     self.player = self.ObjectManager:addGameObject("Player", 50, 50)
-    self.ObjectManager:addGameObject("Enemy", 200, 200)
+    self.ObjectManager:addGameObject("Enemy", 200, 200, {patrol_points = {{500, 500}, {250, 250}}})
     self.ObjectManager:addGameObject("Enemy", 400, 200)
     self.UI = UI(self, self.ObjectManager)
 end
