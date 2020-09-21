@@ -6,6 +6,7 @@ function GameObject:new(om, x, y, args)
     self.y = y
     self.w = 4
     self.h = 4
+    self.alive = true
     self.collision_radius = 5
     self.collision_handler = CollisionHandler(self, om)
     if args and #args >= 1 then
@@ -28,4 +29,8 @@ end
 
 function GameObject:resolveCollision(object, dx, dy)
     -- default functionality
+end
+
+function GameObject:die()
+    self.alive = false
 end

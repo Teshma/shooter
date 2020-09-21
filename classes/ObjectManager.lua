@@ -9,10 +9,14 @@ function ObjectManager:update(dt)
     if #self.objects >= 1 then
         for i=1, #self.objects do
             local game_object = self.objects[i]
-            game_object:update(dt)
-            if game_object.dead then
-                game_object = nil
-                table.remove(self.objects, i)
+            if game_object then
+                if game_object.alive == false then
+                    print(game_object, "destroy")
+                    game_object = nil                   
+                    table.remove(self.objects, i)
+                else
+                    game_object:update(dt)
+                end
             end
         end
     end

@@ -29,7 +29,10 @@ function love.keypressed(key)
 end
 
 function love.mousepressed(x, y, button, isTouch)
-    if button == 1 then
-        current_room.player.weapon:shoot(x, y)
+    local player = current_room.player
+    if player then
+        if button == 1 and player.weapon:is(Pistol) then
+            player.weapon:shoot(x, y)
+        end
     end
 end

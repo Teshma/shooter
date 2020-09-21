@@ -24,10 +24,8 @@ end
 
 function Pistol:shoot(x, y)
     if self.shot then return end
-    print("Fire!", x, y)
     local delta_y = y - self.y
     local delta_x = x - self.x
-    print(delta_x, delta_y)
     local r = math.atan2(delta_y, delta_x)
     self.om:addGameObject("Bullet", self.x, self.y, {r = r})
     self.shot = true
