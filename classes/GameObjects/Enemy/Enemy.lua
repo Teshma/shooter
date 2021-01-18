@@ -6,15 +6,19 @@ function Enemy:new(om, x, y, args)
     self.hitpoints = 50
     self.v = 200
     self.angle = 0
-    self.state = EnemyStates(self)
+    self.moving = false
+    self.stand_time = 2
     self.collision_radius = 40
     self.collider = Collider.rectangle(self.x, self.y, self.w, self.h)
     self.collider:moveTo(self.x, self.y)
+    self.vision = VisionCone(om, self.x + self.w/2, self.y + self.h/2, {owner = self})
+    self.state = EnemyStates(self)
 end
 
 function Enemy:update(dt)
     Enemy.super.update(self, dt)
     if self.state then self.state:update(dt) end
+    if self.vision then self.vision:update(dt) end
     self.x, self.y = self.collider:center()
     self.x = self.x - self.w/2
     self.y = self.y - self.h/2
@@ -25,9 +29,11 @@ function Enemy:draw()
     Enemy.super.draw(self)
     love.graphics.rectangle("line", self.x, self.y, self.w, self.h)
     if debug then
+        
         love.graphics.setColor(1, 0, 0)
         love.graphics.line(self.x + self.w/2, self.y + self.h/2, self.x + self.w/2 + self.v*math.cos(self.angle), self.y + self.h/2 + self.v*math.sin(self.angle))
         self.collider:draw("line")
+        self.vision:draw()
         if self.patrol_points then
             for i,v in ipairs(self.patrol_points) do
                 love.graphics.circle("fill", v[1], v[2], 5)

@@ -3,6 +3,9 @@ function love.load()
     Collider = require "libs.HC"
     Input = require "libs.input"
     M = require "libs.moses"
+    Timer = require "libs.timer"
+    Draft = require "libs.draft"
+    draft = Draft()
     require "utils"
     initialiseFiles()
     current_room = nil
