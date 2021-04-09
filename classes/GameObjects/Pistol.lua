@@ -2,7 +2,7 @@ Pistol = GameObject:extend()
 
 function Pistol:new(om, x, y, args)
     Pistol.super.new(self, om, x, y, args)
-    self.original_firerate = 0.25
+    self.original_firerate = 0.5
     self.firerate = self.original_firerate
     self.owner = args.owner
     self.shot = false
@@ -27,7 +27,7 @@ function Pistol:shoot(x, y)
     local delta_y = y - self.y
     local delta_x = x - self.x
     local r = math.atan2(delta_y, delta_x)
-    self.om:addGameObject("Bullet", self.x, self.y, {r = r})
+    self.om:addGameObject("Bullet", self.x, self.y, {r = r, owner = self.owner})
     self.shot = true
     --fire projectile at mouse cursor
 end

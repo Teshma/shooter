@@ -31,9 +31,17 @@ function Bullet:draw()
 end
 
 function Bullet:resolveCollision(object, dx, dy)
-    if object:is(Enemy) then
-        object:takeDamage(self.damage)
-        self:die()
+    if self.owner:is(Enemy) then
+        if object:is(Player) then
+            object:takeDamage(self.damage)
+            self:die()
+        end
+    end
+    if self.owner:is(Player) then
+        if object:is(Enemy) then
+            object:takeDamage(self.damage)
+            self:die()
+        end
     end
 end
 

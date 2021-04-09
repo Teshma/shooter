@@ -29,6 +29,9 @@ function love.keypressed(key)
     if key == "0" then
         debug = not debug
     end
+	if key == "r" then
+		goToRoom(current_room.name)
+	end
 end
 
 function love.mousepressed(x, y, button, isTouch)

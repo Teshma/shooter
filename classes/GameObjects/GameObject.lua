@@ -2,6 +2,7 @@ GameObject = Object:extend()
 
 function GameObject:new(om, x, y, args)
     self.om = om
+    self.uuid = UUID()
     self.x = x
     self.y = y
     self.w = 4
@@ -9,6 +10,7 @@ function GameObject:new(om, x, y, args)
     self.alive = true
     self.collision_radius = 5
     self.collision_handler = CollisionHandler(self, om)
+    self.timer = Timer()
     if args then
         for k,v in pairs(args) do
             self[k] = v
@@ -18,6 +20,7 @@ end
 
 function GameObject:update(dt)
     if self.collision_handler then self.collision_handler:update(dt) end
+    if self.timer then self.timer:update(dt) end
 end
 
 function GameObject:draw()

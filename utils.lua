@@ -1,6 +1,16 @@
+function UUID()
+    local fn = function(x)
+        local r = love.math.random(16) - 1
+        r = (x == "x") and (r + 1) or (r % 4) + 9
+        return ("0123456789abcdef"):sub(r, r)
+    end
+    return (("xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"):gsub("[xy]", fn))
+end
+
 function goToRoom(room_type, ...)
     if current_room and current_room.destroy then current_room:destroy() end
     current_room = _G[room_type](...)
+	current_room.name = room_type
 end
 
 function initialiseFiles()

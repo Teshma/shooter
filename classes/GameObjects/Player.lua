@@ -52,7 +52,19 @@ end
 
 function Player:resolveCollision(object, dx, dy)
     Player.super.resolveCollision(self, object, dx, dy)
-    
+    if object:is(VisionCone) then
+        object:onSeePlayer(self.x, self.y)
+    end
+    if object:is(Enemy) then
+        object.collider:move(dx,dy)
+    end
+end
+
+function Player:takeDamage(damage_value)
+    self.hitpoints = math.max(self.hitpoints - damage_value, 0)
+    if self.hitpoints <= 0 then
+        -- game over/lose life
+    end
 end
 
 function Player:setWeapon(weapon_type)

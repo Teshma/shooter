@@ -67,3 +67,18 @@ function ObjectManager:queryCircleArea(x, y, radius)
         end
     end)
 end
+
+function ObjectManager:destroy()
+	while #self.objects > 0 do
+		print(#self.objects)
+		local game_object = self.objects[#self.objects]
+		if game_object then
+			print(game_object, "destroy")
+			game_object = nil                   
+			table.remove(self.objects, #self.objects)
+		end
+	end
+	print(#self.objects)
+	self.objects = nil
+	self.room = nil
+end
