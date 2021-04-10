@@ -3,10 +3,10 @@ Player = GameObject:extend()
 function Player:new(om, x, y, args)
     Player.super.new(self, om, x, y, args)
     self.hitpoints = 100
-    self.w = 50
-    self.h = 50
-    self.v = 400
-    self.collision_radius = 50
+    self.w = 16
+    self.h = 16
+    self.v = 80
+    self.collision_radius = 32
     self.weapon = nil
     self.collider = Collider.rectangle(self.x, self.y, self.w, self.h)
     self.collider:moveTo(self.x + self.w/2, self.y + self.h/2)
@@ -15,7 +15,6 @@ end
 
 function Player:update(dt)
     Player.super.update(self, dt)
-    if self.weapon then self.weapon:update(dt) end
     if love.keyboard.isDown("d") then
         self.collider:move(self.v*dt, 0)
     end
@@ -68,7 +67,7 @@ function Player:takeDamage(damage_value)
 end
 
 function Player:setWeapon(weapon_type)
-    self.weapon = self.om:addGameObject(weapon_type, self.x, self.y, {owner = self})
+    self.weapon = self.om:addGameObject(weapon_type, self.x+self.w/2, self.y+self.h/2, {owner = self})
 end
 
 function Player:__tostring()

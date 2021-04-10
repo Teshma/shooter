@@ -3,9 +3,9 @@ VisionCone = GameObject:extend()
 function VisionCone:new(om, x, y, args)
     VisionCone.super.new(self, om, x, y, args)
     self.owner = self.owner or nil
-    self.w, self.h = 200, 200
+    self.w, self.h = 64, 64
     self.angle = self.owner.angle
-    self.collision_radius = 100
+    self.collision_radius = 64
     self.origin_x = self.x + 5*self.w/8*math.cos(self.angle)
     self.origin_y = self.y + 5*self.h/8*math.sin(self.angle)
     self.player_x = nil

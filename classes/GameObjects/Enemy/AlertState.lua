@@ -20,10 +20,11 @@ end
 function AlertState:enter()
     self.last_known_x = self.enemy.vision.player_x
     self.last_known_x = self.enemy.vision.player_y
+	local initial_v = self.enemy.v
     self.enemy.timer:every(1, function() 
         self.enemy.v = 0
         self.enemy.weapon:shoot(self.player.x, self.player.y)
-        self.enemy.timer:after(0.2, function() self.enemy.v = 200 end) 
+        self.enemy.timer:after(0.2, function() self.enemy.v = initial_v end) 
     end, self.enemy.uuid .. "_enemy_shoot") 
 end
 

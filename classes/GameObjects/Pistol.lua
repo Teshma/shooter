@@ -14,12 +14,12 @@ function Pistol:update(dt)
         self.shot = false
         self.firerate = self.original_firerate
     end
-    self.x = self.owner.x
-    self.y = self.owner.y
+    self.x = self.owner.x + self.owner.w/4
+    self.y = self.owner.y + self.owner.h/4
 end
 
 function Pistol:draw()
-
+	love.graphics.rectangle("fill", self.x, self.y, self.w, self.h)
 end
 
 function Pistol:shoot(x, y)

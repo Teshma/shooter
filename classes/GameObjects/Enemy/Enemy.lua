@@ -2,13 +2,13 @@ Enemy = GameObject:extend()
 -- need to make a state machine where the enemy can rotate between different states, e.g patrol, standing, attacking with sub states within those
 function Enemy:new(om, x, y, args)
     Enemy.super.new(self, om, x, y, args)
-    self.w, self.h = 40, 40
+    self.w, self.h = 16, 16
     self.hitpoints = 50
-    self.v = 200
+    self.v = 40
     self.angle = 0
     self.moving = false
     self.stand_time = 1
-    self.collision_radius = 40
+    self.collision_radius = 32
     self.collider = Collider.rectangle(self.x, self.y, self.w, self.h)
     self.collider:moveTo(self.x, self.y)
     self.vision = VisionCone(om, self.x + self.w/2, self.y + self.h/2, {owner = self})

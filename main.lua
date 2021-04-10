@@ -5,8 +5,13 @@ function love.load()
     M = require "libs.moses"
     Timer = require "libs.timer"
     Draft = require "libs.draft"
-    draft = Draft()
+	Push = require "libs.push"
+	draft = Draft()
     require "utils"
+	love.graphics.setDefaultFilter("nearest")
+	gameWidth, gameHeight = 432, 243
+	windowWidth, windowHeight = 1280, 720
+	Push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, {fullscreen = false, resizable = false,})
     initialiseFiles()
     current_room = nil
     goToRoom("Stage")
@@ -19,7 +24,9 @@ function love.update(dt)
 end
 
 function love.draw()
+	Push:start()
     if current_room then current_room:draw() end
+	Push:finish()
 end
 
 function love.keypressed(key)
