@@ -9,9 +9,9 @@ function love.load()
 	draft = Draft()
     require "utils"
 	love.graphics.setDefaultFilter("nearest")
-	gameWidth, gameHeight = 432, 243
-	windowWidth, windowHeight = 1280, 720
-	Push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, {fullscreen = false, resizable = false,})
+	gameWidth, gameHeight = 480, 288
+	windowWidth, windowHeight = 1920, 1080
+	Push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, {fullscreen = true, resizable = false,})
     initialiseFiles()
     current_room = nil
     goToRoom("Stage")

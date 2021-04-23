@@ -2,9 +2,9 @@ Bullet = GameObject:extend()
 
 function Bullet:new(om, x, y, args)
     Bullet.super.new(self, om, x, y, args)
-    self.w, self.h = 8, 4
+    self.w, self.h = 8, 2
     self.r = args.r
-    self.v = 20
+    self.v = 200
     self.damage = 25
     
     self.collision_radius = 20

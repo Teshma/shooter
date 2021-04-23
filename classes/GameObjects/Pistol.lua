@@ -14,16 +14,25 @@ function Pistol:update(dt)
         self.shot = false
         self.firerate = self.original_firerate
     end
-    self.x = self.owner.x + self.owner.w/4
-    self.y = self.owner.y + self.owner.h/4
+    self.x = self.owner.x + self.owner.w/2
+    self.y = self.owner.y + self.owner.h/2
 end
 
 function Pistol:draw()
-	love.graphics.rectangle("fill", self.x, self.y, self.w, self.h)
+	--love.graphics.rectangle("fill", self.x, self.y, self.w, self.h)
+	if debug then
+		if self.owner:is(Player) then
+			local x, y = Push:toGame(love.mouse.getPosition())
+			love.graphics.line(self.x, self.y, x, y)
+		end
+	end
 end
 
 function Pistol:shoot(x, y)
     if self.shot then return end
+	if self.owner:is(Player) then
+		x, y = Push:toGame(x,y)
+	end
     local delta_y = y - self.y
     local delta_x = x - self.x
     local r = math.atan2(delta_y, delta_x)
