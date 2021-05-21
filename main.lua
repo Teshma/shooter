@@ -6,6 +6,7 @@ function love.load()
     Timer = require "libs.timer"
     Draft = require "libs.draft"
 	Push = require "libs.push"
+	sti = require "libs.sti"
 	draft = Draft()
     require "utils"
 	love.graphics.setDefaultFilter("nearest")

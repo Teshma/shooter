@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="9" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="5">
+ <editorsettings>
+  <export target="level1.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" name="level1tileset" tilewidth="32" tileheight="32" tilecount="135" columns="15">
+  <image source="tileset.png" trans="ff00ff" width="480" height="288"/>
+  <tile id="15">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="16">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="17">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="18">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="45">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="46">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+    <object id="2" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="47">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="49">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="50">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="51">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="53">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="54">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="60">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="62">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="64">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0.125" width="9.875" height="31.875"/>
+    <object id="2" x="10.125" y="31.125" width="21.875" height="0.75"/>
+   </objectgroup>
+  </tile>
+  <tile id="66">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="21.125" y="0.125" width="10.75" height="31.75"/>
+    <object id="2" x="0" y="31.125" width="21.125" height="0.875"/>
+   </objectgroup>
+  </tile>
+  <tile id="68">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="-0.125" y="0" width="16" height="32.125"/>
+   </objectgroup>
+  </tile>
+  <tile id="69">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="15.125" y="0" width="16.875" height="32.125"/>
+   </objectgroup>
+  </tile>
+  <tile id="75">
+   <objectgroup draworder="index" id="5">
+    <object id="4" x="0" y="0" width="32.125" height="32"/>
+    <object id="5" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="76">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="77">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="79">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="80">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="81">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="83">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="84">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <layer id="1" name="floor" width="15" height="9">
+  <data encoding="csv">
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107
+</data>
+ </layer>
+ <objectgroup id="4" name="Player">
+  <object id="1" name="Player Spawn" x="15.5" y="274"/>
+ </objectgroup>
+ <objectgroup id="5" name="Enemy">
+  <object id="2" name="Enemy" x="161" y="50"/>
+  <object id="3" name="PatrolPoint1" x="159" y="238">
+   <point/>
+  </object>
+  <object id="4" name="PatrolPoint2" x="161" y="60">
+   <point/>
+  </object>
+ </objectgroup>
+ <layer id="3" name="wall" width="15" height="9">
+  <data encoding="csv">
+62,62,62,16,17,18,19,17,18,19,17,18,19,17,18,
+62,62,62,63,0,0,0,0,0,0,0,0,0,0,0,
+62,62,62,63,0,0,46,47,47,47,47,47,47,47,47,
+62,62,54,78,36,36,61,62,62,62,62,62,62,62,62,
+62,62,69,0,0,0,61,62,62,62,62,62,62,62,62,
+62,62,84,48,0,0,76,55,62,62,62,62,62,62,62,
+62,62,62,63,0,0,0,70,62,62,62,62,62,62,62,
+77,77,77,78,0,0,46,85,62,62,62,62,62,62,62,
+0,0,0,0,0,0,61,62,62,62,62,62,62,62,62
+</data>
+ </layer>
+</map>
