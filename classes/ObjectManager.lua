@@ -33,7 +33,7 @@ end
 function ObjectManager:addGameObject(object_name, x, y, args)
     if args then
         for k,v in pairs(args) do
-            print(k, v)
+            --print(k, v)
         end
     end
     if _G[object_name] then
