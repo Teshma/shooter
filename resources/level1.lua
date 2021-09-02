@@ -8,8 +8,8 @@ return {
   height = 9,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 6,
-  nextobjectid = 5,
+  nextlayerid = 8,
+  nextobjectid = 6,
   properties = {},
   tilesets = {
     {
@@ -40,6 +40,9 @@ return {
       tiles = {
         {
           id = 15,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -71,6 +74,9 @@ return {
         },
         {
           id = 16,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -102,6 +108,9 @@ return {
         },
         {
           id = 17,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -133,6 +142,9 @@ return {
         },
         {
           id = 18,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -164,6 +176,9 @@ return {
         },
         {
           id = 45,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -195,6 +210,10 @@ return {
         },
         {
           id = 46,
+          properties = {
+            ["collider"] = { id = 0 },
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -239,6 +258,9 @@ return {
         },
         {
           id = 47,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -270,6 +292,9 @@ return {
         },
         {
           id = 49,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -301,6 +326,9 @@ return {
         },
         {
           id = 50,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -332,6 +360,9 @@ return {
         },
         {
           id = 51,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -363,6 +394,9 @@ return {
         },
         {
           id = 53,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -394,6 +428,9 @@ return {
         },
         {
           id = 54,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -425,6 +462,9 @@ return {
         },
         {
           id = 60,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -455,7 +495,16 @@ return {
           }
         },
         {
+          id = 61,
+          properties = {
+            ["isSolid"] = true
+          }
+        },
+        {
           id = 62,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -487,6 +536,9 @@ return {
         },
         {
           id = 64,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -531,6 +583,9 @@ return {
         },
         {
           id = 66,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -575,6 +630,9 @@ return {
         },
         {
           id = 68,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -606,6 +664,9 @@ return {
         },
         {
           id = 69,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -637,6 +698,9 @@ return {
         },
         {
           id = 75,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -681,6 +745,9 @@ return {
         },
         {
           id = 76,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -712,6 +779,9 @@ return {
         },
         {
           id = 77,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -743,6 +813,9 @@ return {
         },
         {
           id = 79,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -774,6 +847,9 @@ return {
         },
         {
           id = 80,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -805,6 +881,9 @@ return {
         },
         {
           id = 81,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -836,6 +915,9 @@ return {
         },
         {
           id = 83,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -867,6 +949,9 @@ return {
         },
         {
           id = 84,
+          properties = {
+            ["isSolid"] = true
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",

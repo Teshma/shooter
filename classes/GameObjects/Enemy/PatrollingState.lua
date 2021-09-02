@@ -6,7 +6,7 @@ function PatrollingState:new(enemy_state_handler, enemy)
     self.points = self.enemy.patrol_points
     self.counter = 2
     self.angle_set = false
-    if self.points then self.next_point = self.points[1] print(self.next_point[1]) end
+    if self.points then self.next_point = self.points[1] --[[ print(self.next_point[1]) ]] end
     self.timer = Timer()
     self.range = 3
     self.enemy.moving = true
@@ -40,7 +40,7 @@ end
 function PatrollingState:setAngle(x, y, dt)
     local angle = math.atan2(y - self.enemy.y, x - self.enemy.x)
     self.enemy.angle = self.enemy.angle + (angle - self.enemy.angle)*2*dt
-    if math.floor(1000*self.enemy.angle) == math.floor(1000*angle) then print(true) self.angle_set = true end
+    if math.floor(1000*self.enemy.angle) == math.floor(1000*angle) then --[[ print(true) ]] self.angle_set = true end
 end
 
 function PatrollingState:setNextPoint()

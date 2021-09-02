@@ -18,7 +18,7 @@ function UI:draw()
     for i,object in ipairs(self.om.objects) do
         if object.alive and object.hitpoints and not object:is(Player) then
             love.graphics.setColor(1, 0.1, 0.2)
-            love.graphics.rectangle("fill", object.x, object.y - 15, object.hitpoints, 10)
+            love.graphics.rectangle("fill", object.x, object.y - 15, object.hitpoints, 5)
             love.graphics.setColor(1, 1, 1)
         end
     end
