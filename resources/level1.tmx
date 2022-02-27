@@ -129,8 +129,8 @@
     <property name="isSolid" type="bool" value="true"/>
    </properties>
    <objectgroup draworder="index" id="2">
-    <object id="1" x="0" y="0.125" width="9.875" height="31.875"/>
-    <object id="2" x="10.125" y="31.125" width="21.875" height="0.75"/>
+    <object id="1" x="0" y="0.03125" width="10" height="31.9688"/>
+    <object id="2" x="10.0469" y="31.0313" width="21.9531" height="0.96875"/>
    </objectgroup>
   </tile>
   <tile id="66">
@@ -138,8 +138,8 @@
     <property name="isSolid" type="bool" value="true"/>
    </properties>
    <objectgroup draworder="index" id="2">
-    <object id="1" x="21.125" y="0.125" width="10.75" height="31.75"/>
-    <object id="2" x="0" y="31.125" width="21.125" height="0.875"/>
+    <object id="1" x="21.025" y="0.025" width="10.9722" height="31.9611"/>
+    <object id="2" x="0" y="31.0028" width="21.0028" height="0.997222"/>
    </objectgroup>
   </tile>
   <tile id="68">
@@ -163,8 +163,7 @@
     <property name="isSolid" type="bool" value="true"/>
    </properties>
    <objectgroup draworder="index" id="5">
-    <object id="4" x="0" y="0" width="32.125" height="32"/>
-    <object id="5" x="0" y="0" width="32" height="32"/>
+    <object id="6" x="0" y="0" width="32" height="32"/>
    </objectgroup>
   </tile>
   <tile id="76">
@@ -172,7 +171,7 @@
     <property name="isSolid" type="bool" value="true"/>
    </properties>
    <objectgroup draworder="index" id="2">
-    <object id="1" x="0" y="0" width="32" height="32"/>
+    <object id="3" x="0" y="0" width="32" height="32"/>
    </objectgroup>
   </tile>
   <tile id="77">
@@ -180,7 +179,7 @@
     <property name="isSolid" type="bool" value="true"/>
    </properties>
    <objectgroup draworder="index" id="2">
-    <object id="1" x="0" y="0" width="32" height="32"/>
+    <object id="7" x="0" y="0" width="32" height="32"/>
    </objectgroup>
   </tile>
   <tile id="79">

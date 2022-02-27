@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="9" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="12">
+ <editorsettings>
+  <export target="devlevel.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="135" columns="15">
+  <image source="tileset.png" trans="ff00ff" width="480" height="288"/>
+ </tileset>
+ <tileset firstgid="136" name="ovegrownbrickset" tilewidth="32" tileheight="32" tilecount="48" columns="8">
+  <image source="ovegrownbrickset.png" trans="ff00ff" width="272" height="192"/>
+ </tileset>
+ <layer id="1" name="floor" width="15" height="9">
+  <data encoding="csv">
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,92,92,92,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,92,92,92,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107,
+107,107,107,107,107,107,107,107,107,107,107,107,107,107,107
+</data>
+ </layer>
+ <objectgroup id="3" name="player">
+  <object id="2" name="Player Spawn" x="173" y="210.515"/>
+ </objectgroup>
+ <group id="4" name="walls">
+  <objectgroup id="6" name="wallcollisions">
+   <object id="4" name="collision_box" x="129" y="161" width="94" height="30"/>
+  </objectgroup>
+  <layer id="2" name="walltiles" width="15" height="9">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,153,154,155,169,153,154,155,0,0,0,0,
+0,0,0,0,0,0,0,0,92,92,92,0,0,0,0,
+0,0,0,0,76,77,78,0,153,154,155,0,0,0,0,
+0,0,0,0,0,0,0,0,92,92,92,0,0,0,0,
+0,0,0,0,0,0,0,0,169,169,169,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+ </group>
+ <objectgroup id="7" name="walls"/>
+</map>

@@ -16,6 +16,7 @@ function GameObject:new(om, x, y, args)
             self[k] = v
         end
     end
+	self.registered = false
 end
 
 function GameObject:update(dt)

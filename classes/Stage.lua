@@ -1,7 +1,7 @@
 Stage = Object:extend()
 
 function Stage:new()
-	self.map = sti("resources/level1.lua")
+	self.map = sti("resources/devlevel.lua")
 	--local player_spawn = self.map:getObjectProperties("Player", "Player Spawn")
 	self.colliders = {}
 	local player_spawn
@@ -22,7 +22,7 @@ function Stage:new()
     self.ObjectManager = ObjectManager(self)
 	self:spawnMapCollisions()
     self.player = self.ObjectManager:addGameObject("Player", player_spawn.x or 0, player_spawn.y or 0)
-    local enemy = self.ObjectManager:addGameObject("Enemy", enemy_spawn.x or 50, enemy_spawn.y or 50, {patrol_points = patrol_point_table})
+    --local enemy = self.ObjectManager:addGameObject("Enemy", enemy_spawn.x or 50, enemy_spawn.y or 50, {patrol_points = patrol_point_table})
     --self.ObjectManager:addGameObject("Enemy", 100, 100)
     --self.ObjectManager:addGameObject("Enemy", 400, 200, {patrol_points = {{200, 400}, {200, 200}}})
     self.UI = UI(self, self.ObjectManager)
@@ -59,7 +59,7 @@ function Stage:destroy()
 	print("--- done ---")
 end
 
-function Stage:spawnMapCollisions()
+--[[ function Stage:spawnMapCollisions()
 	if self.map == nil then
 		return
 	end
@@ -72,22 +72,36 @@ function Stage:spawnMapCollisions()
 						local objects = tile.objectGroup.objects
 						if table.getn(objects) > 1 then
 							self.ObjectManager:addGameObject(
-								"Wall",(collumn-1)*32 + objects[1].x, (row-1)*32 + objects[1].y, {width = objects[1].width, height = objects[1].height, 
+								"Wall",(collumn-1)*32 + objects[1].x, (row-1)*32 + objects[1].y, {w = objects[1].width, h = objects[1].height, 
 								collider = Collider.rectangle((collumn-1)*32 + objects[1].x, (row-1)*32 + objects[1].y, objects[1].width, objects[1].height)})
 							self.ObjectManager:addGameObject(
-								"Wall",(collumn-1)*32 + objects[2].x, (row-1)*32 + objects[2].y, {width = objects[2].width, height = objects[2].height, 
+								"Wall",(collumn-1)*32 + objects[2].x, (row-1)*32 + objects[2].y, {w = objects[2].width, h = objects[2].height, 
 								collider = Collider.rectangle((collumn-1)*32 + objects[2].x, (row-1)*32 + objects[2].y, objects[2].width, objects[2].height)})
 
 						else
 							self.ObjectManager:addGameObject(
-								"Wall",(collumn-1)*32 + objects[1].x, (row-1)*32 + objects[1].y, {width = objects[1].width, height = objects[1].height, 
-								collider = Collider.rectangle((collumn-1)*32 + objects[1].x, (row-1)*32 + objects[1].y, objects[1].width, objects[1].height)})
+								"Wall",(collumn-1)*32 + objects[1].x, (row-1)*32 + objects[1].y, {w = objects[1].width, h = objects[1].height, 
+								collider = Collider.rectangle((collumn-1)*32 + objects[1].x, (row-1)*32 + objects[1].y, objects[1].width, objects[1].height-0.05)})
 						end
 					end
 				end
 			end
 		end
 	end	
+end ]]
+
+function Stage:spawnMapCollisions()
+	if self.map == nil then return end
+	for k, object in pairs(self.map.objects) do
+		if object.name == "collision_box" then
+			self.ObjectManager:addGameObject("Wall", object.x, object.y, 
+			{w = object.width, h = object.height, collider = Collider.rectangle(object.x, object.y, object.width, object.height)})
+		end
+		if object.name == "wall" then
+			self.ObjectManager:addGameObject("Wall", object.x, object.y-32, 
+			{w = object.width, h = object.height, collider = Collider.rectangle(object.x, object.y-32, object.width, object.height)})
+		end
+	end
 end
 
 function Stage:handleCollisions(dt)

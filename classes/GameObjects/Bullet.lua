@@ -6,19 +6,18 @@ function Bullet:new(om, x, y, args)
     self.r = args.r
     self.v = 200
     self.damage = 25
-    
-    self.collision_radius = 20
+
     self.collider = Collider.rectangle(self.x, self.y, self.w, self.h)
 end
 
 function Bullet:update(dt)
     Bullet.super.update(self, dt)
-    --[[ self.x = self.x + self.v*math.cos(self.r) * dt
-    self.y = self.y + self.v*math.sin(self.r) * dt ]]
+    self.x = self.x + self.v*math.cos(self.r) * dt
+    self.y = self.y + self.v*math.sin(self.r) * dt
     self.collider:move(self.v*math.cos(self.r)*dt, self.v*math.sin(self.r)*dt)
-	self.x, self.y = self.collider:center()
+	--[[ self.x, self.y = self.collider:center()
 	self.x = self.x - self.w/2
-    self.y = self.y - self.h/2
+    self.y = self.y - self.h/2 ]]
 
 	
 end
@@ -37,6 +36,7 @@ function Bullet:draw()
 end
 
 function Bullet:resolveCollision(object, dx, dy)
+	if object:is(Wall) then self:die() end
     if self.owner:is(Enemy) then
         if object:is(Player) then
             object:takeDamage(self.damage)

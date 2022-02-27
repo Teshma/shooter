@@ -10,8 +10,11 @@ end
 
 function CollisionHandler:update(dt)
     -- find collisions for object
-    local candidates = self.om:queryCircleArea(self.x or (self.object.x + self.object.w/2), self.y or (self.object.y + self.object.h/2), self.object.collision_radius)
+    local candidates = self.om:queryCircleArea(self.object.x + self.object.w/2,self.object.y + self.object.h/2, self.object.collision_radius)
     for i,object in ipairs(candidates) do
+		if debug and self.object:is(Player) and object:__tostring() == "Wall" then
+			print(i, object)
+		end
         if object.collider then
             local collide, dx, dy = self.object.collider:collidesWith(object.collider)
             self.object.dx = dx
@@ -24,7 +27,7 @@ function CollisionHandler:update(dt)
 end
 
 function CollisionHandler:draw()
-    love.graphics.circle("line", self.x or (self.object.x + self.object.w/2), self.y or (self.object.y + self.object.h/2), self.object.collision_radius)
+    love.graphics.circle("line", self.object.x + self.object.w/2,self.object.y + self.object.h/2, self.object.collision_radius)
     
 end
 

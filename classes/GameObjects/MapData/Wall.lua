@@ -2,14 +2,15 @@ Wall = GameObject:extend()
 
 function Wall:new(om, x, y, args)
 	Wall.super.new(self, om, x, y, args)
-
+	
 end
 
 function Wall:update(dt)
-
+	Wall.super.update(self)
 end
 
 function Wall:draw()
+	Wall.super.draw(self)
 	if debug then
 		if self.collider then
 			love.graphics.setColor(1, 0, 0)
@@ -26,4 +27,8 @@ function Wall:resolveCollision(object, dx, dy)
 	end
     object.collider:move(dx,dy)
 
+end
+
+function Wall:__tostring()
+	return "Wall"
 end

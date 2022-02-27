@@ -17,10 +17,13 @@ function love.load()
     current_room = nil
     goToRoom("Stage")
     debug = false
+	pause = false
     
 end
 
 function love.update(dt)
+	if love.keyboard.isDown("p") then pause = not pause end
+	if pause then dt = 0 end
     if current_room then current_room:update(dt) end
 end
 

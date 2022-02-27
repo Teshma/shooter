@@ -6,7 +6,7 @@ function Player:new(om, x, y, args)
     self.w = 16
     self.h = 16
     self.v = 80
-    self.collision_radius = 32
+    self.collision_radius = 16
     self.weapon = nil
     self.collider = Collider.rectangle(self.x, self.y, self.w, self.h)
     self.collider:moveTo(self.x + self.w/2, self.y + self.h/2)
@@ -37,7 +37,7 @@ function Player:draw()
     Player.super.draw(self)
     love.graphics.setColor(1,1,1)
     love.graphics.rectangle("line", self.x, self.y, self.w, self.h)
-    love.graphics.rectangle("fill", self.x, self.y - 20, (self.weapon.original_firerate - self.weapon.firerate)*100, 10)
+    love.graphics.rectangle("fill", self.x - 5, self.y + self.h , 2, -(self.weapon.original_firerate - self.weapon.firerate)*15)
     if debug then
         if self.dx and self.dy then
             love.graphics.line(self.x + self.w/2, self.y + self.h/2, self.x + self.w/2 + 10*self.dx, self.y + self.h/2 + 10*self.dy)

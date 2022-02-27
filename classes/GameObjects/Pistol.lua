@@ -23,7 +23,7 @@ function Pistol:draw()
 	if debug then
 		if self.owner:is(Player) then
 			local x, y = Push:toGame(love.mouse.getPosition())
-			love.graphics.line(self.x, self.y, x, y)
+			if x and y then love.graphics.line(self.x, self.y, x, y) end
 		end
 	end
 end
@@ -33,11 +33,13 @@ function Pistol:shoot(x, y)
 	if self.owner:is(Player) then
 		x, y = Push:toGame(x,y)
 	end
-    local delta_y = y - self.y
-    local delta_x = x - self.x
-    local r = math.atan2(delta_y, delta_x)
-    self.om:addGameObject("Bullet", self.x, self.y, {r = r, owner = self.owner})
-    self.shot = true
+	if x and y then 
+		local delta_y = y - self.y
+		local delta_x = x - self.x
+		local r = math.atan2(delta_y, delta_x)
+		self.om:addGameObject("Bullet", self.x, self.y, {r = r, owner = self.owner})
+		self.shot = true
+	end
     --fire projectile at mouse cursor
 end
 
