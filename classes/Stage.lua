@@ -1,7 +1,7 @@
 Stage = Object:extend()
 
 function Stage:new()
-	self.map = sti("resources/devlevel.lua")
+	self.map = sti("resources/level1.lua")
 	--local player_spawn = self.map:getObjectProperties("Player", "Player Spawn")
 	self.colliders = {}
 	local player_spawn
@@ -22,7 +22,7 @@ function Stage:new()
     self.ObjectManager = ObjectManager(self)
 	self:spawnMapCollisions()
     self.player = self.ObjectManager:addGameObject("Player", player_spawn.x or 0, player_spawn.y or 0)
-    --local enemy = self.ObjectManager:addGameObject("Enemy", enemy_spawn.x or 50, enemy_spawn.y or 50, {patrol_points = patrol_point_table})
+    local enemy = self.ObjectManager:addGameObject("Enemy", enemy_spawn.x or 50, enemy_spawn.y or 50, {patrol_points = patrol_point_table})
     --self.ObjectManager:addGameObject("Enemy", 100, 100)
     --self.ObjectManager:addGameObject("Enemy", 400, 200, {patrol_points = {{200, 400}, {200, 200}}})
     self.UI = UI(self, self.ObjectManager)
@@ -33,7 +33,7 @@ function Stage:update(dt)
 	self.map:update(dt)
     self.ObjectManager:update(dt)
     self.UI:update(dt)
-	self:handleCollisions(dt)
+	--self:handleCollisions(dt)
 	
 end
 

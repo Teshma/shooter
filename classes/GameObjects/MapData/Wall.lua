@@ -2,7 +2,7 @@ Wall = GameObject:extend()
 
 function Wall:new(om, x, y, args)
 	Wall.super.new(self, om, x, y, args)
-	
+	self.collision_radius = self.w
 end
 
 function Wall:update(dt)
@@ -25,7 +25,9 @@ function Wall:resolveCollision(object, dx, dy)
 	if object:is(Bullet) then
 		object:die()
 	end
-    object.collider:move(dx,dy)
+	if object:is(Player) or object:is(Enemy) then
+    	object.collider:move(dx,dy)
+	end
 
 end
 

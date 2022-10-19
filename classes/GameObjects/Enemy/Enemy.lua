@@ -11,7 +11,7 @@ function Enemy:new(om, x, y, args)
     self.collision_radius = 32
     self.collider = Collider.rectangle(self.x, self.y, self.w, self.h)
     self.collider:moveTo(self.x, self.y)
-    self.vision = VisionCone(om, self.x + self.w/2, self.y + self.h/2, {owner = self})
+    self.vision = VisionCone(om, self.x + self.w/2, self.y + self.h/2, {owner = self, x_offset = self.w/2, y_offset = self.h/2})
     self.state = EnemyStates(self)
     self.weapon = nil
     self:setWeapon("Pistol")

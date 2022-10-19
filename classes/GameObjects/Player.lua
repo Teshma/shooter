@@ -11,6 +11,7 @@ function Player:new(om, x, y, args)
     self.collider = Collider.rectangle(self.x, self.y, self.w, self.h)
     self.collider:moveTo(self.x + self.w/2, self.y + self.h/2)
     self:setWeapon("Pistol")
+	--self.collision_radius = 4 * self.collision_radius
 end
 
 function Player:update(dt)
@@ -30,6 +31,7 @@ function Player:update(dt)
     self.x, self.y = self.collider:center()
     self.x = self.x - self.w/2
     self.y = self.y - self.h/2
+	self.collision_handler:updateCoords(self.x, self.y)
     
 end
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="9" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="6">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="9" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="27">
  <editorsettings>
   <export target="level1.lua" format="lua"/>
  </editorsettings>
@@ -247,6 +247,21 @@
   <object id="4" name="PatrolPoint" x="161" y="60">
    <point/>
   </object>
+ </objectgroup>
+ <objectgroup color="#00000000" id="8" name="WallCollisionData" opacity="0">
+  <object id="7" name="collision_box" x="0" y="192" width="128" height="32"/>
+  <object id="8" x="0" y="192" height="32"/>
+  <object id="11" name="collision_box" x="0" y="256" width="202" height="32"/>
+  <object id="12" name="collision_box" x="192" y="192" width="64" height="64"/>
+  <object id="15" name="collision_box" x="239.087" y="160.043" width="16.913" height="31.9565"/>
+  <object id="16" name="collision_box" x="192" y="128" width="64" height="32"/>
+  <object id="18" name="collision_box" x="192" y="64" width="288" height="64"/>
+  <object id="19" name="collision_box" x="80.5" y="128" width="47.5" height="64"/>
+  <object id="20" name="collision_box" x="64.5" y="0" width="63.5" height="96"/>
+  <object id="21" name="collision_box" x="128" y="0" width="352" height="32"/>
+  <object id="22" name="collision_box" x="463.063" y="32" width="16.9375" height="31.9375"/>
+  <object id="24" name="collision_box" x="64" y="96" width="16.0909" height="31.9091"/>
+  <object id="25" name="collision_box" x="0" y="224" width="16" height="31.9375"/>
  </objectgroup>
  <layer id="3" name="wall" width="15" height="9">
   <data encoding="csv">
