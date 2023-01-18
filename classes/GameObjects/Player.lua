@@ -5,7 +5,7 @@ function Player:new(om, x, y, args)
     self.hitpoints = 100
     self.w = 16
     self.h = 16
-    self.v = 80
+    self.v = 40
     self.collision_radius = 16
     self.weapon = nil
     self.collider = Collider.rectangle(self.x, self.y, self.w, self.h)

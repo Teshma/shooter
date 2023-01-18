@@ -1,1 +1,7 @@
 *.txt
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/shooter/FileContentIndex/32ef4244-46b1-4f62-8dd8-5fcd70bc3f4b.vsidx
+.vs/shooter/FileContentIndex/read.lock
+.vs/shooter/v17/.wsuo
+.vscode/settings.json

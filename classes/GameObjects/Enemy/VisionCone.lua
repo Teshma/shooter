@@ -5,13 +5,9 @@ function VisionCone:new(om, x, y, args)
     self.owner = self.owner or nil
     self.w, self.h = 64, 64
     self.angle = self.owner.angle
-    self.collision_radius = 64
+    self.collision_radius = self.w
     self.player_x = nil
     self.player_y = nil
-    local widthRadius = self.w / 2
-    local heightRadius = self.h / 2
-	local x_offset = self.owner.w/2
-	local y_offset = self.owner.h/2
     local x1 = self.x
     local y1 = self.y 
     local x2 = self.x + self.w
@@ -57,5 +53,5 @@ function VisionCone:onSeePlayer(x, y)
 end
 
 function VisionCone:__tostring()
-	return "VisionCone " .. self.uuid
+	return "VisionCone "
 end

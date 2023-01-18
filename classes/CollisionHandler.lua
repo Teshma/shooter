@@ -36,7 +36,7 @@ function CollisionHandler:update(dt)
 end
 
 function CollisionHandler:draw()
-	love.graphics.print(self.object:__tostring() .. " " .. tostring(self.x_offset) .. " " .. tostring(self.y_offset), self.x, self.y, 0, 1, 1, 0, 15)
+	--love.graphics.print(self.object:__tostring() .. " " .. tostring(self.x_offset) .. " " .. tostring(self.y_offset), self.x, self.y, 0, 1, 1, 0, 15)
     love.graphics.circle("fill", self.x + self.x_offset, self.y + self.y_offset, 1)
     love.graphics.circle("line", self.x + self.x_offset, self.y + self.y_offset, self.object.collision_radius)
     

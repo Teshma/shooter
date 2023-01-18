@@ -61,7 +61,7 @@ function ObjectManager:queryCircleArea(x, y, radius)
         if distance < radius then
             return true
         end
-        distance = math.sqrt((e.x + e.w - x)^2 + (e.y + e.h - y)^2) -- checking if bottomg right corner of target is in circle
+        distance = math.sqrt((e.x + e.w - x)^2 + (e.y + e.h - y)^2) -- checking if bottom right corner of target is in circle
         if distance < radius then
             return true
         end

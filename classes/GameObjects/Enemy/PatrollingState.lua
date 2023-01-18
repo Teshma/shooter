@@ -44,7 +44,7 @@ function PatrollingState:setAngle(x, y, dt)
 end
 
 function PatrollingState:setNextPoint()
-    local max_counter = #self.points
+    local max_counter = #self.points        -- number of patrol points
     if self.counter > max_counter then self.counter = 1 end
     self.next_point = self.points[self.counter]
     self.counter = self.counter + 1
