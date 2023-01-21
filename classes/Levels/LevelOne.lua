@@ -1,8 +1,11 @@
-Stage = Object:extend()
+LevelOne = Object:extend()
 
-function Stage:new()
-	self.map = sti("resources/level1.lua")
+function LevelOne:new()
 	self.colliders = {}
+	self.ObjectManager = ObjectManager(self)
+	self.ml = MapLoader:new("resources/level1.lua", self.ObjectManager)
+	self.ml:spawnMapCollisions()
+	self.map = self.ml.map
 	local player_spawn
 	local enemy_spawn
 	local patrol_point_table = {}
@@ -18,21 +21,19 @@ function Stage:new()
 		end
 	end
 	
-    self.ObjectManager = ObjectManager(self)
-	self:spawnMapCollisions()
     self.player = self.ObjectManager:addGameObject("Player", player_spawn.x or 0, player_spawn.y or 0)
     local enemy = self.ObjectManager:addGameObject("Enemy", enemy_spawn.x or 50, enemy_spawn.y or 50, {patrol_points = patrol_point_table})
     self.UI = UI(self, self.ObjectManager)
 end
 
-function Stage:update(dt)
+function LevelOne:update(dt)
 	self.map:update(dt)
     self.ObjectManager:update(dt)
     self.UI:update(dt)
 	
 end
 
-function Stage:draw()
+function LevelOne:draw()
 	self.map:draw()
     self.ObjectManager:draw()
     self.UI:draw()
@@ -46,7 +47,7 @@ function Stage:draw()
 	
 end
 
-function Stage:destroy()
+function LevelOne:destroy()
 	print("--- destroying stage ---")
 	self.ObjectManager:destroy()
 	self.player = nil
@@ -54,12 +55,4 @@ function Stage:destroy()
 	print("--- done ---")
 end
 
-function Stage:spawnMapCollisions()
-	if self.map == nil then return end
-	for k, object in pairs(self.map.objects) do
-		if object.name == "collision_box" then
-			self.ObjectManager:addGameObject("Wall", object.x, object.y, 
-			{w = object.width, h = object.height, collider = Collider.rectangle(object.x, object.y, object.width, object.height)})
-		end
-	end
-end
+

@@ -11,11 +11,11 @@ function love.load()
     require "utils"
 	love.graphics.setDefaultFilter("nearest", "nearest")
 	gameWidth, gameHeight = 480, 288
-	windowWidth, windowHeight = 1920, 1080
+	windowWidth, windowHeight = love.window.getDesktopDimensions()
 	Push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, {fullscreen = true, resizable = true,})
     initialiseFiles()
     current_room = nil
-    goToRoom("Stage")
+    goToRoom("LevelOne")
     debug = false
 	pause = false
     
