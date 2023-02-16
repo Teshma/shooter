@@ -2,7 +2,7 @@ AlertState = Object:extend()
 
 function AlertState:new(enemy_state_handler, enemy)
     self.enemy = enemy
-    self.player = self.enemy.om.room.player
+    self.player = self.enemy.om.level.player
     self.esh = enemy_state_handler
     self.last_known_x = nil
     self.last_known_y = nil

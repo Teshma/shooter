@@ -9,20 +9,25 @@ function love.load()
 	sti = require "libs.sti"
 	draft = Draft()
     require "utils"
+    initialiseFiles()
+
 	love.graphics.setDefaultFilter("nearest", "nearest")
 	gameWidth, gameHeight = 480, 288
 	windowWidth, windowHeight = love.window.getDesktopDimensions()
 	Push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, {fullscreen = true, resizable = true,})
-    initialiseFiles()
+    
     current_room = nil
-    goToRoom("LevelOne")
+    levelList = {}
+    levelList["GameplayTest"] = require "classes.Levels.GameplayTest"
+    levelList["LevelOne"] = require "classes.Levels.LevelOne"
+    goToRoom("GameplayTest")
+    
     debug = false
 	pause = false
     
 end
 
 function love.update(dt)
-	
 	if pause then dt = 0 end
     if current_room then current_room:update(dt) end
 end

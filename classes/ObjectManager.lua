@@ -1,8 +1,9 @@
 ObjectManager = Object:extend()
 
-function ObjectManager:new(room)
-    self.room = room
+function ObjectManager:new(level)
+    self.level = level
     self.objects = {}
+    return self
 end
 
 function ObjectManager:update(dt)
@@ -80,5 +81,5 @@ function ObjectManager:destroy()
 	end
 	print(#self.objects)
 	self.objects = nil
-	self.room = nil
+	self.level = nil
 end
