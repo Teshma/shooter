@@ -1,7 +1,7 @@
 GameplayTest = LevelBase:extend()
 
 function GameplayTest:new()
-    GameplayTest.super.new(self, nil)
+    GameplayTest.super.new(self, "resources/devlevel.lua")
     self.player = self.ObjectManager:addGameObject("Player", 50, 50)
 end
 
